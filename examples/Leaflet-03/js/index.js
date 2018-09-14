@@ -9,26 +9,29 @@ var map = new L.Map('map', {
     attributionControl: false
 });
 
-L.Routing.control({
-  waypoints: [
-    L.latLng(57.74, 11.94),
-    L.latLng(57.6792, 11.949)
-  ],
-  routeWhileDragging: true,
-  routeDragTimeout: 250,
-  showAlternatives: true,
-  lineOptions: {
-            styles: [
-                {color: 'black', opacity: 0.15, weight: 9},
-                {color: 'white', opacity: 0.8, weight: 6},
-                {color: 'steelblue', opacity: 1, weight: 4}
-            ]
-        },
-  altLineOptions: {
-            styles: [
-                {color: 'black', opacity: 0.15, weight: 9},
-                {color: 'white', opacity: 0.8, weight: 6},
-                {color: 'hotpink', opacity: 1, weight: 4}
-            ]
-        }
+var control = L.Routing.control({
+    waypoints: [
+        L.latLng(-33.4569397, -70.6482697),
+        L.latLng(-33.0245, -71.5523)
+    ],
+    geocoder: L.Control.Geocoder.nominatim(),
+    routeWhileDragging: true,
+    reverseWaypoints: true,
+    showAlternatives: true,
+    lineOptions: {
+        styles: [
+            { color: 'black', opacity: 0.15, weight: 9 },
+            { color: 'white', opacity: 0.8, weight: 6 },
+            { color: 'steelblue', opacity: 1, weight: 4 }
+        ]
+    },
+    altLineOptions: {
+        styles: [
+            { color: 'black', opacity: 0.15, weight: 9 },
+            { color: 'white', opacity: 0.8, weight: 6 },
+            { color: 'hotpink', opacity: 1, weight: 4 }
+        ]
+    }
 }).addTo(map);
+
+L.Routing.errorControl(control).addTo(map);
