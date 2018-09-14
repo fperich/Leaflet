@@ -8,14 +8,14 @@ var map = new L.Map('map', {
 });
 
 var styles = [
-    { color: 'white', opacity: 1, weight: 13 },
-    { color: '#396A92', opacity: 1, weight: 9 },
-    { color: '#4682B4', opacity: 1, weight: 3 }
+    { color: 'white', opacity: 1, weight: 8 },
+    { color: '#396A92', opacity: 1, weight: 5 },
+    { color: '#4682B4', opacity: 1, weight: 1 }
 ]
 
 var points = [
-    [-35, -70], 
-    [48, 15]
+    [-33.4569397, -70.6482697],
+    [48.8534000, 2.3486000]
 ], 
 geodesics = [];
 

@@ -16,20 +16,15 @@ var map = new L.Map('map', {
     attributionControl: false
 });
 
-var points = [
-	[-35, -70], 
-	[48, 15]
-],
-markers = [];
+var markers = [
+    { pos: [-33.4569397, -70.6482697], popup: 'Santiago' },
+    { pos: [48.8534000, 2.3486000], popup: 'Paris'}
+];
 
-_.each(points, function(a, b){
-	var marker = new L.Marker(a).bindPopup(a.toString());
-	markers.push(marker);
-});
-
-var markersgroup = L.featureGroup(markers);
-markersgroup.addTo(map);
-
-_.each(markers, function(e, i) {
-    e.openPopup();
+_.each(markers, function(obj){
+	var marker = L.marker(obj.pos).addTo(map);
+    var p = new L.Popup({ autoClose: false, closeOnClick: false })
+        .setContent(obj.popup)
+        .setLatLng(obj.pos);
+    marker.bindPopup(p).openPopup();
 });

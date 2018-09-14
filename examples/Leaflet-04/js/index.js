@@ -12,19 +12,18 @@ var icon = L.Icon.extend({
 });
 
 var icon1 = new icon({
-    iconUrl: 'https://www.giscoeapp.lrc.gov.on.ca/AIA/Resources/Images/Pushpins/map-marker-red-32.png',
+    iconUrl: 'https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/location-512.png',
     iconSize: [32, 32],
     number: 1
 });
 
 var icon2 = new icon({
-    iconUrl: 'https://www.gulbarga.online/wp-content/uploads/favicon.png',
+    iconUrl: 'https://png.pngtree.com/svg/20170727/place_316551.png',
     iconSize: [32, 32]
 });
 
 var points = [
-    [-35, -70], 
-    [48, 15]
+    [-33.4569397, -70.6482697]
 ];
 var marker = new L.marker(points[0], {
     icon: icon1
